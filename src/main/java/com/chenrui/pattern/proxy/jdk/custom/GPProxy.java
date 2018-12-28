@@ -1,16 +1,15 @@
 package com.chenrui.pattern.proxy.jdk.custom;
 
-import javax.tools.JavaCompiler;
-import javax.tools.StandardJavaFileManager;
-import javax.tools.ToolProvider;
+import javax.tools.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class GPProxy {
 	private static final String ln = "\r\n";
-	public static Object newProxyInstance(ClassLoader classLoad,Class<?>[] interfaces,GPInvocationHandler h){
+	public static Object newProxyInstance(GPClassLoad classLoad,Class<?>[] interfaces,GPInvocationHandler h){
 		try{
 			/**
 			 * 1、动态生成源文件
@@ -29,17 +28,28 @@ public class GPProxy {
 			/**
 			 * 3、编译成字节码文件
 			 */
-			JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+			/*JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 			StandardJavaFileManager manager = compiler.getStandardFileManager(null,null,null);
 			Iterable iterable = manager.getJavaFileObjects(f);
 			JavaCompiler.CompilationTask task = compiler.getTask(null,manager,null,null,null,iterable);
 			task.call();
-			manager.close();
-			/**
+			manager.close();*/
+			JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+			DiagnosticCollector diagnostic = new DiagnosticCollector();
+			StandardJavaFileManager fileManager = compiler.getStandardFileManager(diagnostic,null,null);
+			Iterable compitionfile = fileManager.getJavaFileObjectsFromStrings(Arrays.asList("$Proxy0.java"));
+			JavaCompiler.CompilationTask task  = compiler.getTask(null,fileManager,diagnostic,null,null,compitionfile);
+			task.call();
+			fileManager.close();
+/**
 			 * 4、加载到内存
 			 */
-			String name = GPProxy.class.getPackage().getName() + ".$Proxy0";
-			Class proxyClass = classLoad.loadClass(name);
+
+			//默认的classload
+//			String name = GPProxy.class.getPackage().getName() + ".$Proxy0";
+//			Class proxyClass = classLoad.loadClass(name);
+			//自定义的classload
+			Class proxyClass = classLoad.findClass("$Proxy0");
 			Constructor constructor = proxyClass.getConstructor(GPInvocationHandler.class);
 //			f.delete();
 			/**
