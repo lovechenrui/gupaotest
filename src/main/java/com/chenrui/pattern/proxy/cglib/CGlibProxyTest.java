@@ -1,3 +1,4 @@
+/*
 package com.chenrui.pattern.proxy.cglib;
 
 public class CGlibProxyTest {
@@ -6,3 +7,4 @@ public class CGlibProxyTest {
 		orderProxy.pay(10);
 	}
 }
+*/
