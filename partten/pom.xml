@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.chenrui.gupotest.pattern</groupId>
-    <artifactId>gupoTest</artifactId>
+    <groupId>com.chenrui.pattern</groupId>
+    <artifactId>pattern</artifactId>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>

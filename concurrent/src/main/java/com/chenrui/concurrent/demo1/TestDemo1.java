@@ -1,4 +1,4 @@
-package com.chenrui.gupaotest.concurrent.demo1;
+package com.chenrui.concurrent.demo1;
 
 public class TestDemo1 {
     PrintRequestProcess printRequestProcess;
