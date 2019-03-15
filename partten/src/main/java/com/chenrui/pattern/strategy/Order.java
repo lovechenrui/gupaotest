@@ -1,7 +1,5 @@
 package com.chenrui.pattern.strategy;
 
-import com.chenrui.pattern.strategy.pay.PayMent;
-
 public class Order {
 	private String userid;
 	private String orderid;

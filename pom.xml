@@ -4,9 +4,14 @@
 				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.chenrui.pattern</groupId>
-	<artifactId>gupoTest</artifactId>
+	<groupId>com.gupaoTest</groupId>
+	<artifactId>gupaoTest</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<modules>
+		<module>concurrent</module>
+		<module>partten</module>
+	</modules>
+	<dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -15,5 +20,5 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
+	</dependencyManagement>
 </project>

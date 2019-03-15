@@ -65,7 +65,7 @@ public class GPProxy {
 	private static String generateJava(Class<?>[] interfaces) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("package com.chenrui.pattern.proxy.jdk.custom;"+ln);
-		sb.append("import com.chenrui.pattern.proxy.jdk.custom.Order;"+ln);
+		sb.append("import Order;"+ln);
 		sb.append("import java.lang.reflect.Method;"+ln);
 		sb.append("public class $Proxy0 implements "+interfaces[0].getName()+"{"+ln);
 		sb.append("GPInvocationHandler h;"+ln);

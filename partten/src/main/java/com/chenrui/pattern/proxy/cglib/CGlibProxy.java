@@ -1,4 +1,3 @@
-/*
 package com.chenrui.pattern.proxy.cglib;
 
 
@@ -24,4 +23,3 @@ public class CGlibProxy implements MethodInterceptor {
 		return object;
 	}
 }
-*/
