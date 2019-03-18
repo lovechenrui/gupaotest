@@ -4,6 +4,8 @@ import com.chenrui.pattern.delegate.mvc.controller.MemberAction;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,6 @@ public class ServletDispatcher {
         }catch (Exception e){
             e.printStackTrace();
         }
-        this.handdingMapping = handdingMapping;
     }
 
     public void doService(HttpServletRequest request, HttpServletResponse response){
@@ -34,6 +35,28 @@ public class ServletDispatcher {
         //2、根据url找到对应的java类处理
         //3、通过url，拿到对应的handdingmapping
         //4、讲具体的业务分发给对应的method
+        String uri = request.getRequestURI();
+        Handler handler = null;
+        for(Handler h:handdingMapping){
+            if(uri.equals(h.getUrl())){
+                handler = h;
+                break;
+            }
+        }
+        Object obj = null;
+        try {
+            obj = handler.method.invoke(handler.getController(),request.getParameter("memberid"));
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            response.getWriter().write((String) obj);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     class Handler{

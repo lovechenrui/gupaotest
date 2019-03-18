@@ -34,4 +34,13 @@ public class PayStatus {
 	public void setData(String data) {
 		this.data = data;
 	}
+
+	@Override
+	public String toString() {
+		return "PayStatus{" +
+				"code='" + code + '\'' +
+				", msg='" + msg + '\'' +
+				", data='" + data + '\'' +
+				'}';
+	}
 }

@@ -3,10 +3,14 @@ package com.chenrui.pattern.strategy.pay;
 import com.chenrui.pattern.strategy.Order;
 import com.chenrui.pattern.strategy.PayStatus;
 
-public class Alipay implements PayMent {
+public class Alipay extends PayMent {
 	@Override
-	public PayStatus pay(Order order) {
-		System.out.printf("用户：%s 支付：%f",order.getUserid(),order.getAmount());
-		return new PayStatus("200","支付成功","");
+	public String getPayType() {
+		return "支付宝";
+	}
+
+	@Override
+	public double queryBalance(String uid) {
+		return 1000;
 	}
 }

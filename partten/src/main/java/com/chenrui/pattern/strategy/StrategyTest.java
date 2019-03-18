@@ -5,7 +5,8 @@ package com.chenrui.pattern.strategy;
  */
 public class StrategyTest {
 	public static void main(String[] args) {
-		Order order = new Order("1234","1111111",10);
-		PayStatus status = order.pay(PayType.ALIPAY);
+		Order order = new Order("1234","1111111",2000);
+		PayStatus status = order.pay(PayType.ALI_PAY);
+		System.out.println(status);
 	}
 }

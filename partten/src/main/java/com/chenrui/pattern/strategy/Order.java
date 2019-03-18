@@ -1,5 +1,7 @@
 package com.chenrui.pattern.strategy;
 
+import com.chenrui.pattern.strategy.pay.PayMent;
+
 public class Order {
 	private String userid;
 	private String orderid;
@@ -11,10 +13,16 @@ public class Order {
 		this.amount = amount;
 	}
 
-	public PayStatus pay(PayType payType){
+/*	public PayStatus pay(PayType payType){
 		PayStatus payStatus =payType.getPayMent().pay(this);
 		return payStatus;
+	}*/
+
+	public PayStatus pay(String payType){
+		PayMent payMent = PayType.getPayMent(payType);
+		return payMent.pay(this);
 	}
+
 	public String getUserid() {
 		return userid;
 	}
