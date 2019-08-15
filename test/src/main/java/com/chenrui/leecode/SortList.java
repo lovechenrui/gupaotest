@@ -14,6 +14,16 @@ public class SortList {
 			System.out.print(list[i]+"\t");
 		}
 	}
+
+	/**
+	 * 找一个基准值（base），比base小的放在左边，比base大的放在右边，
+	 * 将一个数组分成了两个子数组，然后再按照同样的方法把子数组再分成更小的子数组，
+	 * 直到不能分解为止。
+	 * @param list
+	 * @param left
+	 * @param right
+	 * @return
+	 */
 	public int division(int[]list,int left,int right){
 		int base = list[left];
 		while (left < right && list[right] >= base){
