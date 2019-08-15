@@ -1,6 +1,5 @@
 package com.chenrui.concurrent.spinLock;
 
-import java.awt.font.TextHitInfo;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 

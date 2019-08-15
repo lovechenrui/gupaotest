@@ -6,10 +6,12 @@
 
 	<groupId>com.chenrui.gupaoTest</groupId>
 	<artifactId>gupaoTest</artifactId>
+	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<modules>
 		<module>concurrent</module>
 		<module>partten</module>
+		<module>test</module>
 	</modules>
 	<dependencyManagement>
 	<dependencies>
