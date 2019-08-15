@@ -3,6 +3,9 @@ package com.chenrui.concurrent.spinLock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * cas 实现自旋锁
+ */
 public class SpinLock {
 	private AtomicReference<Thread> owner = new AtomicReference<Thread>();
 	private int rentCount = 0;
