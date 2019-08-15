@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.chenrui.pattern</groupId>
-    <artifactId>pattern</artifactId>
+    <groupId>com.chenrui.partten</groupId>
+    <artifactId>partten</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>

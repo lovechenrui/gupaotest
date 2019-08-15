@@ -1,0 +1,7 @@
+package com.chenrui.partten.delegate.leader;
+
+public class TargetB implements ITarget {
+    public void doing(String command) {
+        System.out.println("我是B ,我负责做"+command);
+    }
+}
