@@ -1,5 +1,7 @@
 package com.chenrui.concurrent.deadLock;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 死锁demo
  */
@@ -17,6 +19,11 @@ public class DeadLockDemo {
 			while(true) {
 				synchronized (locka) {
 					System.out.println(Thread.currentThread().getName() + "获取锁");
+					try {
+						TimeUnit.SECONDS.sleep(2);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 					synchronized (lockb) {
 						System.out.println(Thread.currentThread().getName() + "等待锁");
 					}
