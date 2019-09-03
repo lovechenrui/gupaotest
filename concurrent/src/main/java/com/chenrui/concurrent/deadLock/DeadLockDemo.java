@@ -30,7 +30,6 @@ public class DeadLockDemo {
 				}
 			}
 		}
-
 	}
 	public static void main(String[] args) {
 		DeadLockDemo locka = new DeadLockDemo();
