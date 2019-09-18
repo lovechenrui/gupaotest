@@ -19,8 +19,24 @@ public class RuntimeConstantPoolOOM {
 		test();
 	}
 	public static void test(){
+		/**
+		 * 字符串的拼接会优化成"12312345";
+		 * javap -c test.class 查看字节码文件可验证
+		 */
 		String str0="123"+"12345";
+
+		/**
+		 * 字符串的拼接会优化成StringBuilder.append()
+		 * javap -c test.class 查看字节码文件可验证
+		 */
 		String a = str0+"000000";
+
+		/**
+		 * intern（）如果常量池有字符串，则返回，没有添加到常量池后，返回字符串的引用
+		 * jdk6 首次遇到字符串，会复制字符串到常量池 ，常量池中的引用和java堆中的引用不是同一个对象
+		 * jdk7以后，不在复制，只是在常量池中记录首次出现字符串的引用
+		 *
+		 */
 		String str1 = new StringBuilder("计算机").append("软件").toString();
 		System.out.println(str1.intern() == str1);
 		String str2 = new StringBuilder("ja").append("va").toString();
