@@ -23,7 +23,7 @@ public class WeakHashMapDemo {
 	}
 	public static void myHashMap(){
 
-		HashMap<Integer,String> hashMap = new HashMap<>();
+		HashMap<Integer,String> hashMap = new HashMap<Integer,String>();
 		Integer key = new Integer(1);
 		hashMap.put(key,"value1");
 		System.out.println(hashMap);
@@ -33,7 +33,7 @@ public class WeakHashMapDemo {
 		System.out.println(hashMap);
 	}
 	public static void myWeakHashMap(){
-		WeakHashMap<Integer,String> hashMap = new WeakHashMap<>();
+		WeakHashMap<Integer,String> hashMap = new WeakHashMap<Integer,String>();
 		Integer key = new Integer(1);
 		hashMap.put(key,"value1");
 		System.out.println(hashMap);
