@@ -8,7 +8,7 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarriertest {
     public static void main(String[] args) {
-        CyclicBarrier cyclicBarrier= new CyclicBarrier(7,()->{
+        CyclicBarrier cyclicBarrier= new CyclicBarrier(3,()->{
             System.out.println("人到齐，开始开会");
         });
         for (int i = 0; i < 7 ; i++) {

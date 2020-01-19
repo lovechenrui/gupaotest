@@ -29,8 +29,10 @@ public class RuntimeConstantPoolOOM {
 		 * 字符串的拼接会优化成StringBuilder.append()
 		 * javap -c test.class 查看字节码文件可验证
 		 */
-		String a = str0+"000000";
-
+		String a = "000000";
+		while(a.length() == 100) {
+			a += str0;
+		}
 		/**
 		 * intern（）如果常量池有字符串，则返回，没有添加到常量池后，返回字符串的引用
 		 * jdk6 首次遇到字符串，会复制字符串到常量池 ，常量池中的引用和java堆中的引用不是同一个对象

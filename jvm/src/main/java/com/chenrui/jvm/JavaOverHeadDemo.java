@@ -13,7 +13,7 @@ public class JavaOverHeadDemo {
 		List<String> list = new ArrayList<String>();
 		try{
 			while (true){
-				list.add(String.valueOf(i++).intern());//不断的往list里添加对象，沾满队内存出发GC
+				list.add(String.valueOf(i++).intern());//不断的往list里添加对象，沾满堆内存出发GC
 			}
 		}catch (Exception e){
 			System.out.println("*****************"+i);

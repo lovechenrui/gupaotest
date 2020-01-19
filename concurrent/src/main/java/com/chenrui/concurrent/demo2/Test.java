@@ -46,6 +46,9 @@ public class Test {
 		System.out.println(test4.replaceAll("[0-9](?<=[13579])","%"));
 
 
+		System.out.println(Test.class);
+
+	new Object();
 	}
 
 
