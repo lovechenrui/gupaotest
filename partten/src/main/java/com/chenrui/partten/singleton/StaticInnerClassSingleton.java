@@ -8,7 +8,7 @@ public class StaticInnerClassSingleton {
 
 	}
 	public static StaticInnerClassSingleton getInstance(){
-		return StaticInnerClassSingleton.InnerSingleton.instance;
+		return InnerSingleton.instance;
 	}
 	private static class InnerSingleton{
 		private static final StaticInnerClassSingleton instance  = new StaticInnerClassSingleton();

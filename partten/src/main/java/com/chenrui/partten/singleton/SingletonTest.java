@@ -12,8 +12,8 @@ public class SingletonTest {
 			}
 		};
 		int threadNum = 100;
-		long time = StartThread.startTaskInOnce(threadNum,task);
-		System.out.println("双重检索测试time = " + time);
+		//long time = StartThread.startTaskInOnce(threadNum,task);
+		//System.out.println("双重检索测试time = " + time);
 
 		/**
 		 * 饿汉式测试
@@ -25,8 +25,8 @@ public class SingletonTest {
 			}
 		};
 		int threadNum1 = 100;
-		long time1 = StartThread.startTaskInOnce(threadNum1,task1);
-		System.out.println("饿汉式测试time = " + time1);
+		//long time1 = StartThread.startTaskInOnce(threadNum1,task1);
+		//System.out.println("饿汉式测试time = " + time1);
 
 		/**
 		 * 静态代码块测试
@@ -38,15 +38,15 @@ public class SingletonTest {
 			}
 		};
 		int threadNum2 = 100;
-		long time2 = StartThread.startTaskInOnce(threadNum2,task2);
-		System.out.println("饿汉式测试time = " + time2);
+		//long time2 = StartThread.startTaskInOnce(threadNum2,task2);
+		//System.out.println("饿汉式测试time = " + time2);
 
 		/**
 		 * 静态内部类块测试
 		 */
 		Runnable task3 = new Runnable() {
 			public void run() {
-				StaticBlockSingleton singleton = StaticBlockSingleton.getInstance();
+				StaticInnerClassSingleton singleton = StaticInnerClassSingleton.getInstance();
 				System.out.println(singleton);
 			}
 		};
