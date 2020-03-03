@@ -1,12 +1,14 @@
 package com.chenrui.leecode;
 
+import java.util.Arrays;
+
 /**
- * 选择排序
+ * 选择排序:找到最小数字的下标，
  * 时间复杂度：N（(n-1)(N-1+1)/2）
  */
 public class SelectSort {
     public static void main(String[] args) {
-        int [] array ={1,7,5,9,3,2};
+        int [] array ={49,38,65,97,76,13,27,49};
         sort(array);
         for(int i:array){
             System.out.println(i);
@@ -21,6 +23,7 @@ public class SelectSort {
                 }
             }
             swap(i,minPos,array);
+            System.out.println(Arrays.toString(array) );
         }
     }
     static void swap(int i,int minPos,int [] array){
