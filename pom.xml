@@ -12,7 +12,10 @@
 		<module>concurrent</module>
 		<module>partten</module>
 		<module>test</module>
-	</modules>
+		<module>jvm</module>
+		<module>rest-on-spring-webmvc</module>
+        <module>nettyrpc</module>
+    </modules>
 	<dependencyManagement>
 	<dependencies>
 		<dependency>
