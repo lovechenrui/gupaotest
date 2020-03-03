@@ -40,15 +40,17 @@ public class DeadLockDemo {
 	}
 	public static void main(String[] args) {
 
-		LinkedBlockingQueue linkedBlockingQueue =new LinkedBlockingQueue(5);
-		linkedBlockingQueue.add("");
-//		linkedBlockingQueue.take();
-		ArrayBlockingQueue arrayBlockingQueue =new ArrayBlockingQueue(4);
-		arrayBlockingQueue.add("");
-//		arrayBlockingQueue.take();
-		SynchronousQueue synchronousQueue = new SynchronousQueue();
-		synchronousQueue.add("");
+//		LinkedBlockingQueue linkedBlockingQueue =new LinkedBlockingQueue(5);
+//		linkedBlockingQueue.add("");
+////		linkedBlockingQueue.take();
+//		ArrayBlockingQueue arrayBlockingQueue =new ArrayBlockingQueue(4);
+//		arrayBlockingQueue.add("");
+////		arrayBlockingQueue.take();
+//		SynchronousQueue synchronousQueue = new SynchronousQueue();
+//		synchronousQueue.add("");
 //		synchronousQueue.take();
+		ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+		concurrentHashMap.put("","");
 		new LinkedList<>();
 		new ArrayList<>();
 		new HashSet<>().add("");
@@ -61,11 +63,13 @@ public class DeadLockDemo {
 
 
 		ExecutorService executorService = Executors.newFixedThreadPool(5);
-		Executors.newCachedThreadPool();
-		Executors.newSingleThreadExecutor();
+//		Executors.newCachedThreadPool();
+//		Executors.newSingleThreadExecutor();
 		executorService.execute(()->{
 			System.out.println("exce");
 		});
+		System.out.println("123456");
+
 		DeadLockDemo locka = new DeadLockDemo();
 		DeadLockDemo lockb = new DeadLockDemo();
 		Thread threada = new Thread(

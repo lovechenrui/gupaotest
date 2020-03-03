@@ -1,10 +1,21 @@
 package com.chenrui.concurrent.demo2;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+class CallableTest implements Callable{
+	@Override
+	public Object call() throws Exception {
+		return "1";
+	}
+}
 public class Test {
+
 	public static void main(String[] args) {
+		Test test = new Test();
+		new Thread(new FutureTask(new CallableTest())).start();
+
 		String patterstr = "[a-z]+(?=;)";
 		String test1="你好;中国;你好,hello;";
 		Pattern pattern1 = Pattern.compile(patterstr);
@@ -50,6 +61,7 @@ public class Test {
 
 	new Object();
 	}
+
 
 
 }
