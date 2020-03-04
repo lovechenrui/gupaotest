@@ -11,8 +11,8 @@ public class CustomProxy implements GPInvocationHandler {
 	}
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		System.out.println("自定义代理调用前》》》》》");
-		method.invoke(target,args);
+		Object rs = method.invoke(target,args);
 		System.out.println("自定义代理调用后》》》》》");
-		return null;
+		return rs;
 	}
 }
